@@ -1,10 +1,12 @@
 import React from 'react'
-import NavbarSearch from '../components/NavbarSearch'
+
 
 
 const HomePage = () => {
+
+
     return (<>
-        <NavbarSearch />
+
         <div className='p-container'>
             <div className='p-sec-container'>
                 <p >
