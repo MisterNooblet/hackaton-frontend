@@ -11,18 +11,24 @@ const NavbarSearch = () => {
     }, []);
 
     return (
-        <div>
+        <div class="navbarSearch-container">
 
-            <select
-                placeholder='Select a culture'
-            >
-                {options.map(option => (
-                    <option key={option.id}
-                        value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </select>
+            <div className='flex-center column'>
+                <h1>Please Choose A Country </h1>
+                <select
+                    className='selectNav'
+                    placeholder='Select a culture'
+                >
+                    {options.map(option => (
+                        <option key={option.id}
+                            value={option.value}>
+                            {option.label}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+
         </div>
     )
 }
