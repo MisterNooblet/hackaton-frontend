@@ -1,1 +1,34 @@
-<mxfile host="app.diagrams.net" modified="2023-03-28T11:10:19.470Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" version="20.8.23" etag="q9QR4_OwgQ9jJzMoIX8z" type="github"><diagram name="Page-1" id="3EniPVTQEMQ_-ic4pJ-V">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2023-03-28T11:34:13.099Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" etag="8dbs2_YxAIy4xYE6mk8c" version="20.8.23" type="github">
+  <diagram name="Page-1" id="3EniPVTQEMQ_-ic4pJ-V">
+    <mxGraphModel dx="1434" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="510" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-2" value="&lt;b&gt;searchbar&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="110" y="160" width="390" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-3" value="NAVBAR&amp;nbsp; &amp;nbsp; &amp;nbsp; | LOGIN&amp;nbsp; &amp;nbsp;| ?LOGOUT&amp;nbsp; |&amp;nbsp; LEADERBOARD&amp;nbsp; &amp;nbsp;| HOME" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="30" width="490" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-4" value="CALCULATOR&lt;br&gt;&lt;br&gt;&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;horizontal=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="590" y="20" width="510" height="510" as="geometry" />
+        </mxCell>
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-5" value="TOTAL BILL: ###&amp;nbsp;&lt;br&gt;TIP: ####&lt;br&gt;TIP+BILL: ####" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="50" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-6" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="650" y="120" width="420" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-7" value="LOGIN PAGE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="480" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="xlpYa6HmjyS5Hlc8-eO8-8" value="ABOUT THE PROJECT" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="260" width="440" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
