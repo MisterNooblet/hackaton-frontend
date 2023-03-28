@@ -6,7 +6,7 @@ import {
 }
   from 'react-router-dom';
 import RootLayout from './pages/Root';
-import { LoginPage, ErrorPage, CulturePage, LeadboardPage } from './pages/index'
+import { LoginPage, ErrorPage, CulturePage, LeadboardPage, HomePage } from './pages/index'
 
 
 const router = createBrowserRouter([
@@ -15,6 +15,8 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
+      { path: '/', element: <HomePage /> },
+
       { path: '/login', element: <LoginPage /> },
       { path: '/culture', element: <CulturePage /> },
       { path: '/leaderboard', element: <LeadboardPage /> },
