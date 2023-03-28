@@ -1,0 +1,43 @@
+/* Invoice.css */
+
+.Invoice {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 50%;
+  margin: auto;
+}
+.Bill {
+  display: flex;
+  flex-direction: row;
+}
+.Invoice h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.Invoice label {
+  font-size: 18px;
+}
+
+.Invoice input[type="range"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.Invoice p {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.Invoice .tip-each {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.Invoice .tip-and-bill-each {
+  font-size: 18px;
+  margin-top: 10px;
+}
