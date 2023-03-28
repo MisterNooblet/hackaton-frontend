@@ -1,8 +1,11 @@
 import React from 'react'
-
+import BillComponent from '../components/BillComponent'
 const CulturePage = () => {
     return (
-        <div>CulturePage</div>
+        <div>
+
+            <BillComponent />
+        </div>
     )
 }
 
