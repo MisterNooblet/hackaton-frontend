@@ -14,7 +14,7 @@ const NavbarSearch = () => {
         <div class="navbarSearch-container">
 
             <div className='flex-center column'>
-                <h1>Please Choose A Country </h1>
+                <h1 className='title-navSearch'>Please Choose A Country </h1>
                 <select
                     className='selectNav'
                     placeholder='Select a culture'

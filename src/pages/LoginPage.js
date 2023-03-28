@@ -1,9 +1,13 @@
 import React from 'react'
+import UserForm from '../components/UserForm'
 
-const LoginPage = () => {
+
+const Login = ({ setUser }) => {
     return (
-        <div>LoginPage</div>
+        <div>
+            <UserForm formType={'login'} setUser={setUser} />
+        </div>
     )
 }
 
-export default LoginPage
+export default Login
