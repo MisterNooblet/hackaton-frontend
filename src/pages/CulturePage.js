@@ -9,14 +9,17 @@ const CulturePage = ({ user }) => {
     return (
         <div>
             <img src={flags} className='flags-container' alt="flags" />
-            <NavbarSearch selected={selected} setSelected={setSelected} />
-            {selected &&
-                <div className='culture-page-flex'>
-                    <BillComponent />
-                    <TraditionalFoods user={user} selected={selected} />
-                </div>
+            <div className='culture-page-container'>
 
-            }
+                <NavbarSearch selected={selected} setSelected={setSelected} />
+                {selected &&
+                    <div className='culture-page-flex'>
+                        <BillComponent />
+                        <TraditionalFoods user={user} selected={selected} />
+                    </div>
+
+                }
+            </div>
         </div>
     )
 }
