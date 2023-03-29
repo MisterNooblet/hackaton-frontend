@@ -43,31 +43,46 @@ const UserForm = ({ formType, setUser }) => {
 
     if (formType === 'register') {
         return (
-            <div className='flex justify-center items-center h-screen bg-primary'>
-                <form className='w-400 bg-white p-2' onSubmit={handleRegister}>
-                    <h1>{errors ? errors : 'Register'}</h1>
-                    Username:
-                    <input ref={name} type={'text'} name={'username'} placeholder={'Username'}></input>
-                    Full name:
-                    <input ref={displayName} type={'text'} name={'displayName'} placeholder={'Display Name'}></input>
-                    Dont use your regular password the API is public!
-                    <input ref={password} type={'password'} name={'password'} placeholder={'Password'}></input>
-                    <button className='contained-btn my-1 bg-primary w-full'>REGISTER</button>
-                </form>
-            </div>
+            <>
+                <div className="Register-Countiner ">
+                    <div className="Register-Pic">
+                        <img
+                            src="https://img.freepik.com/free-vector/group-people-from-different-races_52683-16145.jpg?w=740&t=st=1680030849~exp=1680031449~hmac=7abf9ff008e7a296f5c4a384089cb29f354be39691d80974a5237e8849255815"
+                            alt="regester-img"
+                        ></img></div>
+
+                    <form className="Register-Form" onSubmit={handleRegister}>
+
+                        <h2 className='h2-login'>{errors ? errors : 'Register'}</h2>
+                        Username:
+                        <input ref={name} type='text' name={'username'} placeholder={'Username'}></input>
+                        Full name:
+                        <input ref={displayName} type='text' name={'displayName'} placeholder={'Display Name'}></input>
+                        Dont use your regular password the API is public!
+                        <input ref={password} type='password' name={'password'} placeholder={'Password'}></input>
+                        <button className='button-LoginPage '>REGISTER</button>
+                    </form>
+                </div>
+            </>
+
         )
     } else {
         return (
-            <div className='flex justify-center items-center h-screen bg-primary'>
-                <form className='w-400 bg-white p-2' onSubmit={handleLogin}>
-                    <h1>{errors ? errors : 'Login'}</h1>
+            <div className="Register-Countiner ">
+                <div className="Register-Pic">
+                    <img
+                        src="https://img.freepik.com/free-vector/group-people-from-different-races_52683-16145.jpg?w=740&t=st=1680030849~exp=1680031449~hmac=7abf9ff008e7a296f5c4a384089cb29f354be39691d80974a5237e8849255815"
+                        alt="regester-img"
+                    ></img></div>
+                <form className="Register-Form" onSubmit={handleLogin}>
+                    <h2 className='h2-login'>{errors ? errors : 'Login'}</h2>
                     Username:
-                    <input ref={name} type={'text'} name={'username'} placeholder={'Username'}></input>
+                    <input ref={name} type='text' name={'username'} placeholder={'Username'}></input>
                     Password:
-                    <input ref={password} type={'password'} name={'password'} placeholder={'Password'}></input>
-                    <button className='contained-btn my-1 bg-primary w-full' type='submit'>LOGIN</button>
+                    <input ref={password} type='password' name={'password'} placeholder={'Password'}></input>
+                    <button className='button-LoginPage ' type='submit'>LOGIN</button>
                     <Link to='/register' className='underline'>
-                        <strong>  Don't have an account? </strong> Get Started!
+                        <p className='p-login'>  <strong>  Don't have an account? </strong> Get Started! </p>
                     </Link>
                 </form>
             </div>

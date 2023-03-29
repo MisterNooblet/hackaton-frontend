@@ -1,54 +1,58 @@
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 
-function createData(name, calories, fat, carbs, protein) {
-    return { name, calories, fat, carbs, protein };
-}
+export default function CustomizedTables() {
+    const [apiData, setApiData] = useState([]);
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const allAccounts = await axios.get(`https://coral-kitten-kit.cyclic.app/api/v1/user`);
+                console.log(allAccounts.data);
+                setApiData(allAccounts.data)
+            } catch (error) {
+                console.log(`Error: ${error}`);
+            }
+        }
+        fetchUsers()
+    }, [])
 
-const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-
-export default function LeadboardPage() {
     return (
-        <div className='board-container'>
-            <TableContainer component={Paper} className="table-container">
-                <Table sx={{ minWidth: 100 }} aria-label="simple table">
-                    <TableHead >
-                        <TableRow className='table-head'>
-                            <TableCell align="center">Top</TableCell>
-                            <TableCell align="center">Full Name</TableCell>
-                            <TableCell align="center">Food</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {rows.map((row) => (
-                            <TableRow
-                                key={row.name}
-                                sx={{ minWidth: 100 }}
-                            >
-                                <TableCell align="center" component="th" scope="row">
-                                    {row.name}
-                                </TableCell>
-                                <TableCell align="center">{row.calories}</TableCell>
-                                <TableCell align="center">{row.fat}</TableCell>
+        <div className="LeaderPage-countainer">
+            <div className="image-container">
+                <img
+                    src="https://img.freepik.com/free-vector/happy-character-winning-prize-with-flat-design_23-2147895792.jpg?w=740&t=st=1680043399~exp=1680043999~hmac=4a0bdcfb4b5253ff53b9307f3d789267b8727b0b14833ccbedf30761ad778462"
+                    alt="topone "
+                    className='img-lead '
+                />
+            </div>
+            <div className="table-countainer">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Top Number</th>
+                            <th>Full Name</th>
+                            <th>Column 3</th>
+                            <th>Column 3</th>
 
-                            </TableRow>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {apiData.map((row) => (
+                            <tr>
+                                <td>{row.name}</td>
+                                <td>{row.name}</td>
+                                <td>{row.name}</td>
+                                <td>{row.name}</td>
+                            </tr>
                         ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
     );
 }
+
+
