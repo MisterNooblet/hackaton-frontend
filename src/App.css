@@ -15,6 +15,14 @@ body{
     height: 3rem;
 }
 
+.container-bill-component{
+  /* background-color: yellowgreen; */
+  position: relative;
+  top: 90px;
+  left: 20px;
+  /* line-height: 20%; */
+}
+
 
 .flex-center{
     display: flex;
@@ -297,7 +305,7 @@ input{
 .LeadContainer{
   height: 100vh;
   width: 110vw;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }
 .table-container{
     width: 600px !important;
@@ -308,7 +316,7 @@ input{
 }
 
 .table-head{
-  background-color: yellow !important;
+  /* background-color: yellow !important; */
     font-size: 30px !important;
 }
 .title-navSearch{
@@ -484,7 +492,7 @@ tr:nth-child(even) {
   align-items: center;
   width: 100%;
   height: 90vh;
-  background-color:yellowgreen;
+  /* background-color:yellowgreen; */
   position: relative;
   top:-75vh;
 
@@ -492,4 +500,30 @@ tr:nth-child(even) {
 
 .treeImg{
   height: 80vh;
+}
+
+.traditional-Food-container{
+  background-color: white;
+  opacity: 0.9;
+  position: relative;
+  top: -9vh;
+  left: 15vw;
+  line-height: 7vh;
+
+}
+
+.traditional-div{
+  display: flex;
+  width:30vw;
+  line-height: 80%;
+}
+
+input[type="checkbox"]{
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.data{
+  font-size: 12px;
 }

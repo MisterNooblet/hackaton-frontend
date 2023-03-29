@@ -20,24 +20,25 @@ const TraditionalFoods = ({ selected, user }) => {
     if (selected) {
         return (
 
-            <div>
-                <h1> {selected.data[0].name}</h1>
+            <div className='traditional-Food-container'>
+                <h1 className='traditional-Food-h1'> {selected.data[0].name}</h1>
                 <h3>Traditional Cuisines</h3>
                 <h4>{user && user.fullname}</h4>
                 <h4>What did you eat?</h4>
                 <form onSubmit={(e) => { handleSubmit(e) }}>
-                    {selected.cuisines.map((data, idx) => {
-                        return (
+                    <div className="traditional-div">
+                        {selected.cuisines.map((data, idx) => {
+                            return (
 
-                            <>
-                                <input type="checkbox" name={`i${idx}`} />
-                                <h2> {data}</h2>
-                            </>
-                        )
+                                <>
+                                    <input type="checkbox" name={`i${idx}`} />
+                                    <h3 className='data'>{data}</h3>
+                                </>
+                            )
 
 
-                    })}
-                    <button>Submit</button>
+                        })}</div>
+                    <button className='button-LoginPage'>Submit</button>
                 </form>
 
             </div>

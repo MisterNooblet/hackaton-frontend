@@ -33,7 +33,7 @@ function BillComponent() {
     // }
 
     return (
-        <div className="container">
+        <div className="container-bill-component">
             <BillInput value={bill} onChange={handleBillChange} />
             <TipInput value={tipPercent} onChange={handleTipChange} />
             <SplitInput value={splitPeople} onChange={handleSplitChange} />
