@@ -1,10 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import classes from '../styles/MainNavigation.moudle.css'
+import logo from '../assest/logo-removebg-preview.png'
 const MainNavigation = ({ user, setUser }) => {
     return (
-        <header className='header'>
+        <header className='navbar-p header'>
             <nav>
+                <img className='logo-navbar' src={logo} alt="img" />
                 <ul className="list">
 
                     <li>

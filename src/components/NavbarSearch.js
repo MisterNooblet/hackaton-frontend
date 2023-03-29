@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const NavbarSearch = () => {
     const [options, setOptions] = useState([]);
+    const [selected, setSelected] = useState(null)
 
     useEffect(() => {
         fetch('https://example.com/api/options')
@@ -11,7 +12,7 @@ const NavbarSearch = () => {
     }, []);
 
     return (
-        <div class="navbarSearch-container">
+        <div class="navbarSearch-container" selected={selected} setSelected={setSelected} >
 
             <div className='flex-center column'>
                 <h1 className='title-navSearch'>Please Choose A Country </h1>
