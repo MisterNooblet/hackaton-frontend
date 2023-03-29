@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import userAPI from '../utils/UserApi';
 
 
 export default function CustomizedTables() {
     const [apiData, setApiData] = useState([]);
+
+    const getData = async () => {
+        const response = await userAPI.getLeaders()
+        setApiData(prev => prev = response)
+    }
     useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const allAccounts = await axios.get(`https://coral-kitten-kit.cyclic.app/api/v1/user`);
-                console.log(allAccounts.data);
-                setApiData(allAccounts.data)
-            } catch (error) {
-                console.log(`Error: ${error}`);
-            }
-        }
-        fetchUsers()
+        getData()
     }, [])
 
     return (
@@ -32,19 +28,19 @@ export default function CustomizedTables() {
                         <tr>
                             <th>Top Number</th>
                             <th>Full Name</th>
-                            <th>Column 3</th>
-                            <th>Column 3</th>
+                            <th>Foods tried!</th>
+
 
                         </tr>
                     </thead>
 
                     <tbody>
-                        {apiData.map((row) => (
+                        {apiData.map((row, idx) => (
                             <tr>
-                                <td>{row.name}</td>
-                                <td>{row.name}</td>
-                                <td>{row.name}</td>
-                                <td>{row.name}</td>
+                                <td>{idx + 1}</td>
+                                <td>{row.fullname}</td>
+                                <td>{row.foods.length}</td>
+
                             </tr>
                         ))}
                     </tbody>

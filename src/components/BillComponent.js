@@ -36,7 +36,7 @@ function BillComponent() {
             <BillInput value={bill} onChange={handleBillChange} />
             <TipInput value={tipPercent} onChange={handleTipChange} />
             <SplitInput value={splitPeople} onChange={handleSplitChange} />
-            <CountrySearch onSelect={handleCountrySelect} onClear={handleCountryClear} />
+            {/* <CountrySearch onSelect={handleCountrySelect} onClear={handleCountryClear} /> */}
             <Expenses bill={bill} tipPercent={tipPercent} splitPeople={splitPeople} selectedCountry={selectedCountry} />
         </div>
     );

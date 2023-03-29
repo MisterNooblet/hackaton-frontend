@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
 import MainNavigation from '../components/MainNavigation'
 import classes from '../styles/Root.moudle.css'
 
-const RootLayout = () => {
+const RootLayout = ({ user, setUser }) => {
 
     return (
         <>

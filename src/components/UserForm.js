@@ -14,7 +14,7 @@ const UserForm = ({ formType, setUser }) => {
         e.preventDefault()
         const isntUnique = await API.userUnique(name.current.value)
         if (!isntUnique && password.current.value.length > 5 && name.current.value.length !== 0) {
-            API.register({ username: name.current.value, alias: displayName.current.value, password: password.current.value, isAdmin: false })
+            API.register({ fullname: name.current.value, email: displayName.current.value, password: password.current.value })
             handleLogin(e)
 
         } else if (name.current.value.length === 0) {
@@ -33,8 +33,8 @@ const UserForm = ({ formType, setUser }) => {
         e.preventDefault()
         const canLogIn = await API.userCanlog(name.current.value, password.current.value)
         if (canLogIn) {
-            localStorage.setItem('user', JSON.stringify({ username: canLogIn.username, alias: canLogIn.alias, isAdmin: canLogIn.isAdmin }))
-            setUser({ username: canLogIn.username, alias: canLogIn.alias, isAdmin: canLogIn.isAdmin })
+            console.log(canLogIn);
+            setUser({ fullname: canLogIn.fullname, id: canLogIn.id })
             navigate('/')
         } else {
             setErrors('Login failed check your credentials')
@@ -56,7 +56,7 @@ const UserForm = ({ formType, setUser }) => {
                         <h2 className='h2-login'>{errors ? errors : 'Register'}</h2>
                         Username:
                         <input ref={name} type='text' name={'username'} placeholder={'Username'}></input>
-                        Full name:
+                        Email:
                         <input ref={displayName} type='text' name={'displayName'} placeholder={'Display Name'}></input>
                         Dont use your regular password the API is public!
                         <input ref={password} type='password' name={'password'} placeholder={'Password'}></input>
@@ -76,7 +76,7 @@ const UserForm = ({ formType, setUser }) => {
                     ></img></div>
                 <form className="Register-Form" onSubmit={handleLogin}>
                     <h2 className='h2-login'>{errors ? errors : 'Login'}</h2>
-                    Username:
+                    Email:
                     <input ref={name} type='text' name={'username'} placeholder={'Username'}></input>
                     Password:
                     <input ref={password} type='password' name={'password'} placeholder={'Password'}></input>

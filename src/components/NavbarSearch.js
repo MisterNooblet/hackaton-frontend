@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import CountriesApi from '../utils/CountriesApi';
 
 
-const NavbarSearch = () => {
+const NavbarSearch = ({ selected, setSelected }) => {
     const [options, setOptions] = useState([]);
-    const [selected, setSelected] = useState(null)
+
+    const fetchData = async () => {
+        const result = await CountriesApi.fetchCountries()
+        setOptions(prev => prev = result.data)
+    }
+
+    const handleCountrySelect = async (e) => {
+        const result = await CountriesApi.fetchCountry(e.target.value)
+        setSelected(prev => prev = result)
+    }
 
     useEffect(() => {
-        fetch('https://example.com/api/options')
-            .then(response => response.json())
-            .then(data => setOptions(data));
+        fetchData()
+        //eslint-disable-next-line
     }, []);
 
     return (
@@ -19,11 +28,12 @@ const NavbarSearch = () => {
                 <select
                     className='selectNav'
                     placeholder='Select a culture'
+                    onChange={(e) => handleCountrySelect(e)}
                 >
-                    {options.map(option => (
-                        <option key={option.id}
-                            value={option.value}>
-                            {option.label}
+                    {options && options.map(option => (
+                        <option key={option}
+                            value={option}>
+                            {option}
                         </option>
                     ))}
                 </select>

@@ -2,11 +2,11 @@ import axios from "axios"
 
 const userAPI = {
     users: axios.create({
-        baseURL: 'https://63f8b5006978b1f9105f4236.mockapi.io/users'
+        baseURL: 'https://weary-pear-beaver.cyclic.app/api/v1'
     }),
 
     register(user) {
-        this.users.post('/', user)
+        this.users.post('/user/register', user)
     },
 
     async getUsers() {
@@ -14,48 +14,30 @@ const userAPI = {
         return response.data
     },
 
-    async userUnique(user) {
-        try {
-            const response = await this.users.get('/', {
-                transformResponse: [
-                    (data) => {
-                        const parsedData = JSON.parse(data)
-                        const result = parsedData.find(users => {
-                            return users.username.toLowerCase() === user.toLowerCase()
-                        })
-                        return result
-                    }
-                ]
-            })
-            return response.data
-        } catch (error) {
-
-        }
-    },
-
     async userCanlog(user, password) {
         try {
-            const response = await this.users.get('/', {
-                transformResponse: [
-                    (data) => {
-                        const parsedData = JSON.parse(data)
-                        const result = parsedData.find(users => {
-                            return users.username.toLowerCase() === user.toLowerCase() && users.password === password
-                        })
-                        return result
-                    }
-                ]
-            })
+            const response = await this.users.post('/user/login', { email: user, password: password })
             return response.data
         } catch (error) {
 
         }
     },
 
-    async deleteUser(id) {
-        await this.users.delete(id)
-        const result = this.users.get()
-        return result.data
+    async insertFoods(userid, array) {
+        try {
+            const response = await this.users.put(`/user/${userid}`, { cuisines: array })
+            console.log(response);
+        } catch (error) {
+
+        }
+    },
+    async getLeaders() {
+        try {
+            const response = await this.users.get('/user/leaders')
+            return response.data.data
+        } catch (error) {
+
+        }
     }
 
 }

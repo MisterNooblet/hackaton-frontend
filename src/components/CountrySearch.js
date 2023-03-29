@@ -19,7 +19,7 @@ function CountrySearch({ suggestions, onCountrySelect }) {
         <div className="searchInput">
             <input type="text" value={searchTerm} onChange={handleInputChange} />
             <ul className="resultBox">
-                {filteredSuggestions.map((country, index) => (
+                {filteredSuggestions && filteredSuggestions.map((country, index) => (
                     <li key={index} onClick={() => handleCountryClick(country)}>
                         {country.name}
                     </li>
