@@ -12,12 +12,9 @@ const UserForm = ({ formType, setUser }) => {
 
     const handleRegister = async (e) => {
         e.preventDefault()
-        const isntUnique = await API.userUnique(name.current.value)
-        if (!isntUnique && password.current.value.length > 5 && name.current.value.length !== 0) {
-            API.register({ fullname: name.current.value, email: displayName.current.value, password: password.current.value })
-            handleLogin(e)
 
-        } else if (name.current.value.length === 0) {
+
+        if (name.current.value.length === 0) {
             setErrors('Please provide a username!')
         } else if (displayName.current.value.length === 0) {
             setErrors('Please provide a display name')
@@ -25,6 +22,9 @@ const UserForm = ({ formType, setUser }) => {
             setErrors('Username already exists!')
         } else if (password.current.value.length <= 5) {
             setErrors('Password is too short please use a password longer than or 6 characters')
+        } else {
+            API.register({ fullname: name.current.value, email: displayName.current.value, password: password.current.value })
+            handleLogin(e)
         }
 
     }
