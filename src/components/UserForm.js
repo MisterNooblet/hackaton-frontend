@@ -18,8 +18,6 @@ const UserForm = ({ formType, setUser }) => {
             setErrors('Please provide a username!')
         } else if (displayName.current.value.length === 0) {
             setErrors('Please provide a display name')
-        } else if (isntUnique) {
-            setErrors('Username already exists!')
         } else if (password.current.value.length <= 5) {
             setErrors('Password is too short please use a password longer than or 6 characters')
         } else {
