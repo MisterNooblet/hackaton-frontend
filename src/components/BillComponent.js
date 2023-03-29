@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import BillInput from './BillInput';
 import TipInput from './TipInput';
 import SplitInput from './SplitInput';
-import CountrySearch from './CountrySearch';
+// import CountrySearch from './CountrySearch';
 import Expenses from './Expenses';
 
 function BillComponent() {
     const [bill, setBill] = useState(0);
     const [tipPercent, setTipPercent] = useState(0);
     const [splitPeople, setSplitPeople] = useState(1);
+    // eslint-disable-next-line
     const [selectedCountry, setSelectedCountry] = useState(null);
 
     function handleBillChange(event) {
@@ -23,13 +24,13 @@ function BillComponent() {
         setSplitPeople(Number(event.target.value));
     }
 
-    function handleCountrySelect(country) {
-        setSelectedCountry(country);
-    }
+    // function handleCountrySelect(country) {
+    //     setSelectedCountry(country);
+    // }
 
-    function handleCountryClear() {
-        setSelectedCountry(null);
-    }
+    // function handleCountryClear() {
+    //     setSelectedCountry(null);
+    // }
 
     return (
         <div className="container">
